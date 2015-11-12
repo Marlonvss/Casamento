@@ -1,0 +1,43 @@
+@font-face {
+    font-family: English2;
+    src: url(../font/English_.ttf);
+}
+
+@font-face {
+font-family: Champignon;
+src: url(../font/Champignon.ttf) format(‘truetype’);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-family: calibri;
+    text-align: center;
+}
+
+#background{
+    height: 100%;    
+    width: 100%;
+    background-image: url(../img/arvore.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-origin: content-box;
+    background-size: contain;
+}
+
+#topo{
+    height: 10%;
+    background-image: url(../img/background.png);
+    font-family: English;
+    font-size: 4em;
+    padding: 2% 0;
+}
+
+#corpo{
+    height: 1000px;
+    background-image: url(../img/background2.png);
+    font-family: English;
+    font-size: 1em;
+    padding: 2% 0;
+}
