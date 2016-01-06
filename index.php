@@ -1,38 +1,288 @@
 <?php
 error_reporting(E_ERROR);
-ob_start();
+
 session_start();
-unset($_SESSION['convite']);
-$UserAdmin = False;
+
 ?>
+<!DOCTYPE html>
+<html lang="pt-br">
 
-<!-- Lista de convidados por convite -->
-<div class="container" id="confirmarPresenca">
-    <h2>Confirme sua presença!</h2>
-    <form method="POST" action="convidado.php">
+<head>
 
-        <label>Número do seu convite: </label>
-        <input type="text" name="convite" id="convite" required oninvalid="setCustomValidity('Fala ae Negou! pow, 10 anos de curso! Coloca o nro do convite aí viril, isso padrao!')" onchange="try{setCustomValidity('')}catch(e){}"><br>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-        <!-- Botão -->
-        <input type="submit" value="Confirmar">
-    </form>
-</div>
-<!-- Mostra o Mapa -->
-<div class="container" id="mapa">
-    <h2>Não se perca!</h2>
-    <div class="bloco">
-    <h4>Opção para quem vem do WestShopping</h4>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d29402.63691156066!2d-43.56148354696716!3d-22.901210207861478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x94ce514578f18209%3A0x75c3f4b7d337b3f9!2sWest+Shopping+-+Estrada+do+Mendanha+-+Campo+Grande%2C+RJ%2C+Brasil!3m2!1d-22.884636399999998!2d-43.5576393!4m5!1s0x9be0df44d2ab4b%3A0x69738528235fc2bd!2sS%C3%ADtio+Bambuluar+Festas+%26+Eventos+-+R.+C%C3%A2ndida+Rosa%2C+200+-+Campo+Grande%2C+Rio+de+Janeiro+-+RJ%2C+23017-385!3m2!1d-22.918207!2d-43.5210498!5e0!3m2!1spt-BR!2sbr!4v1447308332096" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
-    </div>
-    <div class="bloco">
-    <h4>Opção para quem vem do ParkShopping Campo Grande</h4>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d34957.929663970026!2d-43.56715855723963!3d-22.931815506170736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x9be43c6a7b4a45%3A0xe239b917cf9f5aa3!2sPark+Shopping+Campo+Grande+-+Estrada+do+Monteiro%2C+Rio+de+Janeiro+-+RJ%2C+Brasil!3m2!1d-22.927097999999997!2d-43.575183599999995!4m5!1s0x9be0df44d2ab4b%3A0x69738528235fc2bd!2sS%C3%ADtio+Bambuluar+Festas+%26+Eventos+-+Rua+C%C3%A2ndida+Rosa%2C+200+-+Campo+Grande%2C+Rio+de+Janeiro+-+RJ%2C+23017-385%2C+Brasil!3m2!1d-22.918207!2d-43.5210498!5e0!3m2!1spt-BR!2sbr!4v1447341075378" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
-    </div>
-</div>
-<?php
-// Master page...
-$Conteudo = ob_get_contents();
-ob_end_clean();
-$Titulo = "Usuários";
-include_once("master.php");
+    <title>Rafaelle e Marlon Vitor</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/creative.css" type="text/css">
+
+	<script>
+            // Função que limpa os parametros GET da URL..
+            $(document).ready(function() {
+                var url = location.href;
+                if(url.indexOf("?")!=-1) {
+                    location.href = location.href.replace(/\?.*/gi, "");
+                }
+            });            
+    </script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top">
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Início</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="#confirmacaopresenca">Confirmação de Preseça</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#services">Mapa do Sítio</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#portfolio">Fotos</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contato</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <?php include_once 'header.php'; ?>
+        </div>
+    </header>
+
+    <section class="bg-primary" id="confirmacaopresenca">
+        <div class="container">
+            <div class="row">
+                <?php include_once 'confirmacaopresenca.php'; ?>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">At Your Service</h2>
+                    <hr class="primary">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i>
+                        <h3>Sturdy Templates</h3>
+                        <p class="text-muted">Our templates are updated regularly so they don't break.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-paper-plane wow bounceIn text-primary" data-wow-delay=".1s"></i>
+                        <h3>Ready to Ship</h3>
+                        <p class="text-muted">You can use this theme as is, or you can make changes!</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-newspaper-o wow bounceIn text-primary" data-wow-delay=".2s"></i>
+                        <h3>Up to Date</h3>
+                        <p class="text-muted">We update dependencies to keep things fresh.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-heart wow bounceIn text-primary" data-wow-delay=".3s"></i>
+                        <h3>Made with Love</h3>
+                        <p class="text-muted">You have to make your websites with love these days!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="no-padding" id="portfolio">
+        <div class="container-fluid">
+            <div class="row no-gutter">
+                <div class="col-lg-4 col-sm-6">
+                    <a href="#" class="portfolio-box">
+                        <img src="img/portfolio/1.jpg" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Category
+                                </div>
+                                <div class="project-name">
+                                    Project Name
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="#" class="portfolio-box">
+                        <img src="img/portfolio/2.jpg" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Category
+                                </div>
+                                <div class="project-name">
+                                    Project Name
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="#" class="portfolio-box">
+                        <img src="img/portfolio/3.jpg" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Category
+                                </div>
+                                <div class="project-name">
+                                    Project Name
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="#" class="portfolio-box">
+                        <img src="img/portfolio/4.jpg" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Category
+                                </div>
+                                <div class="project-name">
+                                    Project Name
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="#" class="portfolio-box">
+                        <img src="img/portfolio/5.jpg" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Category
+                                </div>
+                                <div class="project-name">
+                                    Project Name
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="#" class="portfolio-box">
+                        <img src="img/portfolio/6.jpg" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Category
+                                </div>
+                                <div class="project-name">
+                                    Project Name
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <aside class="bg-dark">
+        <div class="container text-center">
+            <div class="call-to-action">
+                <h2>Free Download at Start Bootstrap!</h2>
+                <a href="#" class="btn btn-default btn-xl wow tada">Download Now!</a>
+            </div>
+        </div>
+    </aside>
+
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">Let's Get In Touch!</h2>
+                    <hr class="primary">
+                    <p>Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+                </div>
+                <div class="col-lg-4 col-lg-offset-2 text-center">
+                    <i class="fa fa-phone fa-3x wow bounceIn"></i>
+                    <p>123-456-6789</p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                    <p><a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.fittext.js"></script>
+    <script src="js/wow.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/creative.js"></script>
+
+</body>
+
+</html>

@@ -14,7 +14,7 @@ Conecta();
 function _RecuperaTodosConvidados($Where = NULL) {
 
 
-    $strsql = 'select id, convite, nome, familia, sexo, adulto, confirmado, dataconfirmacao from convidados ' . $Where;
+    $strsql = 'select id, convite, nome, origem, genero, confirmado, dataconfirmacao from convidados ' . $Where;
     $rs = mysql_query($strsql);
 
     // Cria ARRAY
@@ -29,9 +29,8 @@ function _RecuperaTodosConvidados($Where = NULL) {
         $Convidado->id = $row['id'];
         $Convidado->convite = $row['convite'];
         $Convidado->nome = $row['nome'];
-        $Convidado->familia = $row['familia'];
-        $Convidado->sexo = $row['sexo'];
-        $Convidado->adulto = $row['adulto'];
+        $Convidado->origem = $row['origem'];
+        $Convidado->genero = $row['genero'];
         $Convidado->confirmado = $row['confirmado'];
         $Convidado->dataconfirmacao = $row['dataconfirmacao'];
 
