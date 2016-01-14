@@ -24,7 +24,7 @@ function _RecuperaTodosConvidados($Where = NULL) {
     // Loop pelo RecordSet
     while ($row = mysql_fetch_array($rs)) {
 
-        $Convidado = new usuarios();
+        $Convidado = new convidado();
 
         $Convidado->id = $row['id'];
         $Convidado->convite = $row['convite'];

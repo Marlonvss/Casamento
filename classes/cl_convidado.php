@@ -1,6 +1,6 @@
 <?php
 
-class usuarios {
+class convidado {
 
     public $id;
     public $convite;

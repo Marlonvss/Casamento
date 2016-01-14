@@ -4,11 +4,11 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
-(function($) {
+(function ($) {
     "use strict"; // Start of use strict
 
     // jQuery for page scrolling feature - requires jQuery Easing plugin
-    $('a.page-scroll').bind('click', function(event) {
+    $('a.page-scroll').bind('click', function (event) {
         var $anchor = $(this);
         $('html, body').stop().animate({
             scrollTop: ($($anchor.attr('href')).offset().top - 50)
@@ -23,16 +23,16 @@
     })
 
     // Closes the Responsive Menu on Menu Item Click
-    $('.navbar-collapse ul li a').click(function() {
+    $('.navbar-collapse ul li a').click(function () {
         $('.navbar-toggle:visible').click();
     });
 
     // Fit Text Plugin for Main Header
     $("h1").fitText(
-        1.2, {
-            minFontSize: '35px',
-            maxFontSize: '65px'
-        }
+            1.2, {
+                minFontSize: '35px',
+                maxFontSize: '65px'
+            }
     );
 
     // Offset for Main Navigation
@@ -46,3 +46,15 @@
     new WOW().init();
 
 })(jQuery); // End of use strict
+
+
+$(function () {
+    setInterval(function () {
+        msg = $("#msg").html();
+        if (msg != "") {
+            setInterval(function () {
+                $("#msg").html('');
+            }, 5000);
+        }
+    }, 100);
+});
