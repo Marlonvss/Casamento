@@ -57,18 +57,12 @@ session_start();
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a class="page-scroll" href="#convidados">Confirmação de Presença</a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="#links">Links</a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="#fotos">Fotos</a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="#contato">Contato</a>
-                        </li>
+                        <li> <a class="page-scroll" href="#convidados">Confirmação de Presença</a> </li>
+                        <!--<li> <a class="page-scroll" href="#padrinhos">Padrinhos</a> </li>-->
+                        <li> <a class="page-scroll" href="#listadepresente">Lista de Presentes</a> </li>
+                        <li> <a class="page-scroll" href="#mapa">Mapa</a> </li>
+                        <li> <a class="page-scroll" href="#fotos">Fotos</a> </li>
+                        <li> <a class="page-scroll" href="#mensagem">Mensagem</a> </li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -76,34 +70,24 @@ session_start();
             <!-- /.container-fluid -->
         </nav>
 
-        <header>
-            <?php include_once 'header.php'; ?>
-        </header>
+        <header> <?php include_once 'header.php'; ?> </header>
 
-        <section class="bg-primary" id="convidados">
-            <?php include_once 'convidados.php'; ?>
-        </section>
+        <section class="bg-primary" id="convidados"> <?php include_once 'convidados.php'; ?> </section>
+<!--        <section id="padrinhos"> <?php include_once 'padrinhos.php'; ?> </section>-->
+        <section id="listadepresente"> <?php include_once 'listadepresente.php'; ?> </section>
+        <section id="mapa"> <?php include_once 'mapa.php'; ?> </section>
+        <section class="no-padding" id="fotos"> <?php include_once 'fotos.php'; ?> </section>
+        <section id="mensagem"> <?php include_once 'mensagem.php'; ?> </section>
 
-        <section id="links">
-            <?php include_once 'links.php'; ?>
-        </section>
-
-        <section class="no-padding" id="fotos">
-            <?php include_once 'fotos.php'; ?>
-        </section>
-
-        <aside class="bg-dark">
-            <div class="container text-center">
-                <div class="call-to-action">
+<!--        <aside class="bg-dark"> 
+            <div class="container text-center"> 
+                <div class="call-to-action"> 
                     <h2>Free Download at Start Bootstrap!</h2>
                     <a href="#" class="btn btn-default btn-xl wow tada">Download Now!</a>
                 </div>
             </div>
-        </aside>
+        </aside>-->
 
-        <section id="contato">
-            <?php include_once 'contato.php'; ?>
-        </section>
 
         <div id="msg" class="col-lg-8 col-lg-offset-2 text-center"></div>
 

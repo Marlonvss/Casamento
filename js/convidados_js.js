@@ -31,13 +31,10 @@ function Convidado_drawRow(rowData) {
 
     if (rowData.confirmado == true) {
         row.append($("<td>Sim</td>"));
-    } else {
-        row.append($("<td>Não</td>"));
-    }
-    if (rowData.dataconfirmacao != null && rowData.dataconfirmacao !== undefined) {
         var data = new Date(rowData.dataconfirmacao.toString() + ' 00:00');
         row.append($("<td>" + data.getDate() + '/' + (data.getMonth() + 1) + '/' + data.getFullYear() + "</td>"));
     } else {
+        row.append($("<td>Não</td>"));
         row.append($("<td>Não confirmado</td>"));
     }
     row.append($("<td><a href='javascript:#' onclick='Convidado_confirmaConvidado(" + rowData.id + ")'><span class='glyphicon glyphicon-ok-circle'></span> Confirmar</a><br><a href='javascript:#' onclick='Convidado_desconfirmaConvidado(" + rowData.id + ")'><span class='glyphicon glyphicon-remove-circle'></span> Cancelar</a></td>"));
