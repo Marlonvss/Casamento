@@ -1,6 +1,11 @@
 <?php
 error_reporting(0);
 session_start();
+
+
+if (isset($_SESSION['msg'])) {
+    $Mensagem = $_SESSION['msg'];
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -36,6 +41,7 @@ session_start();
                         </div>           
                     </form> 
                 </div>
+                <div class="alert"><?php echo $Mensagem ?></div>
             </div>
         </div>
     </body>

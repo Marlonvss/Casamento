@@ -7,11 +7,11 @@ include_once './model/model_convite.php';
 include_once './controller/controller_convite.php';
 
 $_FAMILIA = ($_POST['familia']);
+$_NUMERO = ($_POST['numero']);
 
-if (($_FAMILIA <> "")) {
+if (($_FAMILIA <> "") && ($_NUMERO <> "")) {
 
-
-    $Obj = new Convite(0, $_FAMILIA);
+    $Obj = new Convite(0, $_FAMILIA, $_NUMERO);
     echo AddConvite($Obj);
     if (($Obj->id <> null) && ($Obj->id >= 0)) {
         echo '<META http-equiv="refresh" content="0;URL=?page=convites">';
@@ -34,6 +34,12 @@ if (($_FAMILIA <> "")) {
 
         <form class="form-horizontal" method="post" autocomplete="off">
 
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Número</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="numero" placeholder="Número" required>
+                </div>
+            </div>
             <div class="form-group">
                 <label class="col-sm-2 control-label">Família</label>
                 <div class="col-sm-10">

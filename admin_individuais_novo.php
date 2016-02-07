@@ -15,7 +15,7 @@ if (($_NOME <> "") && ($_ORIGEM <> "") && ($_GENERO <> "")) {
     $Obj = new individual(0, $_SESSION['convite'], $_NOME, $_ORIGEM, $_GENERO);
     $Resp = AddIndividual($Obj);
     if (($Obj->id <> null) && ($Obj->id >= 0)) {
-        echo '<META http-equiv="refresh" content="0;URL=?page=individuais">';
+        //echo '<META http-equiv="refresh" content="0;URL=?page=individuais">';
     } else {
         echo $Resp;
     }

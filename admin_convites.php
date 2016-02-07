@@ -28,7 +28,7 @@ function MakeLinkOptions($id) {
         <table class="table table-striped table-bordered table-hover">
             <thead>
                 <tr>
-                    <th>Convite</th>
+                    <th>Número</th>
                     <th>Familia</th>
                     <th>Operações</th>
                 </tr>
@@ -39,7 +39,7 @@ function MakeLinkOptions($id) {
                 foreach ($ListaConvites as &$convite) {
 
                     echo '<tr>'
-                    . '<td class="col-md-2">' . $convite->id . '</td>'
+                    . '<td class="col-md-2">' . $convite->numero . '</td>'
                     . '<td>' . $convite->familia . '</td>'
                     . '<td class="col-md-3">' . MakeLinkOptions($convite->id) . '</td>'
                     . '</tr>';

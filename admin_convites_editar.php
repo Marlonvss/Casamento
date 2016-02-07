@@ -7,11 +7,13 @@ include_once './controller/controller_convite.php';
 
 $_IDEDITAR = ($_GET['edit']);
 $_FAMILIA = ($_POST['familia']);
+$_NUMERO = ($_POST['numero']);
 
-if (($_FAMILIA <> "")) {
+
+if (($_FAMILIA <> "") && ($_NUMERO <> "")) {
 
 
-    $Obj = new convite($_IDEDITAR, $_FAMILIA);
+    $Obj = new convite($_IDEDITAR, $_FAMILIA, $_NUMERO);
     $Resp = AlterConvite($Obj);
     if ($Resp == '') {
         echo '<META http-equiv="refresh" content="0;URL=?page=convites">';
@@ -39,7 +41,7 @@ $Obj = GetConvite($_IDEDITAR);
             <div class="form-group">
                 <label class="col-sm-2 control-label">Número</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" name="familia" placeholder="Família" value="<?php echo $Obj->id?>" required disabled="disabled">
+                    <input type="text" class="form-control" name="numero" placeholder="Número" value="<?php echo $Obj->numero?>" required>
                 </div>
             </div>
             <div class="form-group">

@@ -13,7 +13,7 @@ if ($metodo == "RecuperaConvidados") {
         $id = $_POST['id'];
     }
 
-    echo json_encode(RecuperaTodosIndividuais("where id_convite = $id"));
+    echo json_encode(RecuperaTodosIndividuais("where id_convite = (select id from convites where numero = $id )"));
 }
 if ($metodo == "ConfirmarUsuario") {
     

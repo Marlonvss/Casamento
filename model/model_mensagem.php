@@ -2,6 +2,8 @@
 
 include_once '../model/model_base.php';
 include_once './model/model_base.php';
+include_once '../model_base.php';
+include_once './model_base.php';
 
 class mensagem extends base {
 

@@ -16,8 +16,8 @@ function GetConvite($id){
     return _GetConvite($id);
 }
 
-function GetConviteByCodigo($codigo){
-    return _GetConvites('where codigo = "'.$codigo.'"')[1];
+function GetConviteByCodigo($numero){
+    return _GetConvites('where numero = "'.$numero.'"')[1];
 }
 
 function DeletarConvite($id){

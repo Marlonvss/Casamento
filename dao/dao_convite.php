@@ -9,11 +9,11 @@ Conecta();
 
 function _GetConvite($Id) {
 
-    $strsql = 'select id, familia, codigo from convites where id = ' . $Id;
+    $strsql = 'select id, familia, numero from convites where id = ' . $Id;
     $rs = mysql_query($strsql);
 
     while ($row = mysql_fetch_array($rs)) {
-        $obj = new convite($row['id'], $row['familia']);
+        $obj = new convite($row['id'], $row['familia'], $row['numero']);
         break;
     }
     return $obj;
@@ -22,14 +22,14 @@ function _GetConvite($Id) {
 function _GetConvites($Where = NULL) {
 
 
-    $strsql = 'select id, familia, codigo from convites ' . $Where . ' order by id ';;
+    $strsql = 'select id, familia, numero from convites ' . $Where . ' order by id ';;
     $rs = mysql_query($strsql);
 
     $lst = array();
     $i = 0;
 
     while ($row = mysql_fetch_array($rs)) {
-        $obj = new convite($row['id'], $row['familia']);
+        $obj = new convite($row['id'], $row['familia'], $row['numero']);
         $lst[$i] = $obj;
         $i++;
     }
@@ -37,8 +37,8 @@ function _GetConvites($Where = NULL) {
 }
 
 function _AddConvite($Convite) {
-    $strsql = 'insert into convites ( familia, codigo ) '
-            . 'values ("' . $Convite->familia . '", "' . $Convite->codigo . '")';
+    $strsql = 'insert into convites ( familia, numero ) '
+            . 'values ("' . $Convite->familia . '", "' . $Convite->numero . '")';
 
     if (!mysql_query($strsql)) {
         return mysql_error();
@@ -51,7 +51,7 @@ function _AddConvite($Convite) {
 function _UpdateConvite($Convite) {
     $strsql = 'update convites '
             . '   set familia = "' . $Convite->familia . '",'
-            . '   set codigo = "' . $Convite->codigo . '"'
+            . '       numero = "' . $Convite->numero . '"'
             . ' where id = ' . $Convite->id;
 
     if (!mysql_query($strsql)) {

@@ -11,6 +11,7 @@ $_SENHA = ($_POST['senha']);
 
 // Limpa Sessão
 unset($_SESSION['adm']);
+unset($_SESSION['msg']);
 
 // Recupera Todos Usuarios
 $ArrayUsuarios = RecuperaTodosUsuarios();
