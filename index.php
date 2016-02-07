@@ -1,4 +1,6 @@
 <?php
+
+echo $_SERVER['HTTP_HOST']; 
 error_reporting(E_ERROR);
 
 session_start();
@@ -79,14 +81,14 @@ session_start();
         <section class="no-padding" id="fotos"> <?php include_once 'fotos.php'; ?> </section>
         <section id="mensagem"> <?php include_once 'mensagem.php'; ?> </section>
 
-<!--        <aside class="bg-dark"> 
-            <div class="container text-center"> 
-                <div class="call-to-action"> 
-                    <h2>Free Download at Start Bootstrap!</h2>
-                    <a href="#" class="btn btn-default btn-xl wow tada">Download Now!</a>
-                </div>
-            </div>
-        </aside>-->
+        <!--        <aside class="bg-dark"> 
+                    <div class="container text-center"> 
+                        <div class="call-to-action"> 
+                            <h2>Free Download at Start Bootstrap!</h2>
+                            <a href="#" class="btn btn-default btn-xl wow tada">Download Now!</a>
+                        </div>
+                    </div>
+                </aside>-->
 
 
         <div id="msg" class="col-lg-8 col-lg-offset-2 text-center"></div>
