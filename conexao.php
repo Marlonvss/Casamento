@@ -10,7 +10,7 @@ function Conecta() {
 //    $BD = 'casamento';
 
 //    Configuração HOSTINGER...
-    $Host = 'localhost';
+    $Host = 'mysql.hostinger.com.br';
     $User = 'u812671016_casam';
     $Pass = 'casamento';
     $BD = 'u812671016_casam';
