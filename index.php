@@ -1,6 +1,5 @@
 <?php
 
-echo $_SERVER['HTTP_HOST']; 
 error_reporting(E_ERROR);
 
 session_start();
