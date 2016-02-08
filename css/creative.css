@@ -128,22 +128,22 @@ aside {
     }
 
     .navbar-default .navbar-header .navbar-brand {
-        color: rgba(255,255,255,.7);
+        color: #f05f40;//rgba(255,255,255,.7);
     }
 
     .navbar-default .navbar-header .navbar-brand:hover,
     .navbar-default .navbar-header .navbar-brand:focus {
-        color: #fff;
+        color: #f05f40;
     }
 
     .navbar-default .nav > li>a,
     .navbar-default .nav>li>a:focus {
-        color: rgba(255,255,255,.7);
+        color: #222;//rgba(255,255,255,.7);
     }
 
     .navbar-default .nav > li>a:hover,
     .navbar-default .nav>li>a:focus:hover {
-        color: #fff;
+        color: #222;
     }
 
     .navbar-default.affix {
@@ -177,9 +177,9 @@ header {
     width: 100%;
     min-height: auto;
     text-align: center;
-    color: #fff;
-    background-image: url(../img/header.jpg);
-    background-position: center;
+    color: #222;
+    background-image: url(../img/old_header.jpg);
+    background-position-x: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -191,6 +191,10 @@ header .header-content {
     width: 100%;
     padding: 100px 15px;
     text-align: center;
+}
+
+header .header-content a {
+    margin-top: 500px;
 }
 
 header .header-content .header-content-inner h1 {
@@ -208,12 +212,13 @@ header .header-content .header-content-inner p {
     margin-bottom: 50px;
     font-size: 16px;
     font-weight: 300;
-    color: rgba(255,255,255,.7);
+    color: #222;
 }
 
 @media(min-width:768px) {
     header {
         min-height: 100%;
+        background-image: url(../img/header.jpg);
     }
 
     header .header-content {
