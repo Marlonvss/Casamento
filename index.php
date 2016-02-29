@@ -76,7 +76,7 @@ session_start();
         <section class="bg-primary" id="convidados"> <?php include_once 'convidados.php'; ?> </section>
 <!--        <section id="padrinhos"> <?php include_once 'padrinhos.php'; ?> </section>-->
         <section id="listadepresente"> <?php include_once 'listadepresente.php'; ?> </section>
-        <section id="mapa"> <?php include_once 'mapa.php'; ?> </section>
+        <section class="no-padding" id="mapa"> <?php include_once 'mapa.php'; ?> </section>
         <section class="no-padding" id="fotos"> <?php include_once 'fotos.php'; ?> </section>
         <section id="mensagem"> <?php include_once 'mensagem.php'; ?> </section>
 

@@ -90,20 +90,20 @@ nav{
 }
 
 #mapa{
-    width: 100%;
-    height: 400px;
+/*    width: 100%;
+    height: 500px;*/
 }
 
 #mapa .bloco{
-    width: calc(50% - 25px);
+/*    width: calc(50% - 25px);
     float: left;
     margin: 10px;
-    border: 1px solid #bbb;
+    border: 1px solid #bbb;*/
 }
 
 #mapa .bloco iframe{
-    position: relative;
-    width: 100%;
+/*    position: relative;
+    width: 100%;*/
 }
 
 /*Trabalhando com Grupo*/
