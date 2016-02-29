@@ -179,12 +179,11 @@ header {
     text-align: center;
     color: #222;
     background-image: url(../img/miniheader.jpg);
-/*    background-size: 400px;*/
     background-position-x: center;
-    -webkit-background-size: contain;
-    -moz-background-size: contain;
-    background-size: contain;
-    -o-background-size: contain;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
 }
 
 header .header-content {
