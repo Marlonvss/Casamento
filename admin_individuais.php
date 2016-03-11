@@ -36,6 +36,7 @@ function MakeLinkOptions($id) {
                     <td>Nome</td>
                     <td>Origem</td>
                     <td>Genero</td>
+                    <td>Confirmado</td>
                     <td>Opções</td>
                 </tr>
             </thead>
@@ -67,15 +68,23 @@ function MakeLinkOptions($id) {
                     } else if ($individual->genero == 'M') {
                         $_Genero = "Masculino";
                     } else {
-                        $_Genero = "Faminino";
+                        $_Genero = "Feminino";
                     }
 
+                    if ($individual->confirmado == 1) {
+                        $_Confirmado = "Sim";
+                    } else if ($individual->confirmado == 0) {
+                        $_Confirmado = "Não";
+                    } else {
+                        $_Confirmado = "Não informado";
+                    }
 
                     echo '<tr>'
                     . '<td class="col-md-1">' . $_Convite . '</td>'
                     . '<td class="col-md-5">' . $_Nome . '</td>'
                     . '<td>' . $_Familia . '</td>'
                     . '<td>' . $_Genero . '</td>'
+                    . '<td>' . $_Confirmado . '</td>'
                     . '<td class="col-md-2">' . MakeLinkOptions($individual->id) . '</td>'
                     . '</tr>';
                 }
